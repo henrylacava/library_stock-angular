@@ -1,0 +1,31 @@
+<main class="flex h-screen w-full flex-col items-center justify-center">
+  <div class="w-full max-w-lg rounded-lg border p-6 shadow-lg">
+    <header class="mb-8">
+      <h1 class="text-2xl font-semibold">Sign in to your account</h1>
+      <span>Enter your email and password below to access your account.</span>
+    </header>
+    <main class="space-y-4">
+      <div class="grid gap-2">
+        <app-primary-input
+          label="Email"
+          placeholder="m@example.com"
+          inputName="email"
+          type="email"
+        ></app-primary-input>
+      </div>
+      <div class="grid gap-2">
+        <app-primary-input
+          label="Password"
+          inputName="password"
+          type="password"
+        ></app-primary-input>
+        <div class="flex justify-end">
+          <a href="#" class="text-sm underline">Forgot password?</a>
+        </div>
+      </div>
+    </main>
+    <footer class="my-4">
+      <app-button text="Sign in" type="primary"></app-button>
+    </footer>
+  </div>
+</main>

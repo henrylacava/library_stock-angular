@@ -1,0 +1,29 @@
+<div class="rounded-lg bg-white p-4 shadow-md">
+  <header class="mb-10">
+    <h2 class="text-2xl font-medium">{{ title }}</h2>
+    <span>{{ description }}</span>
+  </header>
+  <main>
+    <div class="relative">
+      <ng-content></ng-content>
+    </div>
+    <div>
+      <table class="w-full text-left text-sm text-gray-500">
+        <thead class="bg-gray-50 text-xs uppercase text-gray-700">
+          <th scope="col" class="px-6 py-3">Name</th>
+          <th scope="col" class="px-6 py-3">Email</th>
+          <th scope="col" class="px-6 py-3">Actions</th>
+        </thead>
+        <tbody>
+          <tr class="bg-white">
+            <th scope="row" class="px-6 py-4 font-medium text-gray-900">
+              Henry Lacava
+            </th>
+            <td class="px-6 py-4">henrylacavaemail.com</td>
+            <td class="px-6 py-4">Excluir</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>

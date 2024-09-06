@@ -1,0 +1,29 @@
+<div class="flex h-full w-full bg-slate-100">
+  <main class="flex-1 space-y-10 p-4 px-12">
+    <section class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <app-info-card text="Total Customers" info="1,234"></app-info-card>
+      <app-info-card text="Books in Stock" info="4,567"></app-info-card>
+      <app-info-card text="Recent Transactions" info="789"></app-info-card>
+    </section>
+    <section>
+      <app-table title="Customers" description="Manage your customer accounts">
+        <form>
+          <app-primary-input
+            type="text"
+            placeholder="Search customers..."
+          ></app-primary-input>
+        </form>
+      </app-table>
+    </section>
+    <section>
+      <app-table title="Books" description="Manage your book listings">
+        <form>
+          <app-primary-input
+            type="text"
+            placeholder="Search books..."
+          ></app-primary-input>
+        </form>
+      </app-table>
+    </section>
+  </main>
+</div>

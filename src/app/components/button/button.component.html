@@ -1,0 +1,10 @@
+<button
+  [ngClass]="{
+    primary: type === 'primary',
+    secondary: type === 'secondary',
+    destructive: type === 'destructive',
+  }"
+  class="w-full"
+>
+  {{ text }}
+</button>
