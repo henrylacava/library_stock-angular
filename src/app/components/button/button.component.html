@@ -4,7 +4,8 @@
     secondary: type === 'secondary',
     destructive: type === 'destructive',
   }"
-  class="w-full"
+  class="w-full disabled:opacity-80"
+  [disabled]="isDisabled"
 >
   {{ text }}
 </button>
