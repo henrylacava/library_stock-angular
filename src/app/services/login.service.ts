@@ -17,7 +17,7 @@ export class LoginService {
       })
       .pipe(
         tap((value) => {
-          sessionStorage.setItem('auth-token', value.accessToken);
+          localStorage.setItem('auth-token', value.accessToken);
         }),
       );
   }
