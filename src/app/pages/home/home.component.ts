@@ -18,8 +18,9 @@ import { TablePaginateComponent } from '../../components/table-paginate/table-pa
   styleUrl: './home.component.css',
 })
 export class HomeComponent implements OnInit {
-  customerDisplayedColumns: string[] = ['firstName', 'lastName', 'email'];
-  customerDataSource: any = [];
+  customerDisplayedColumns: string[] = ['name', 'email', 'actions'];
+  customerKeys: string[] = ['name', 'email'];
+  customerDataSource: any[] = [];
   customerTotalElements!: number;
   customerTotalPages!: number;
 
@@ -31,6 +32,9 @@ export class HomeComponent implements OnInit {
 
   getCustomers(pageIndex: number = 0, pageSize: number = 10): void {
     this.customerService.getCustomers(pageIndex, pageSize).subscribe((data) => {
+      this.customerDataSource = data.customers.map((customer) => {
+        customer.name = `${customer.firstName} ${customer.lastName}`;
+      });
       this.customerDataSource = data.customers;
       this.customerTotalElements = data.totalElements;
       this.customerTotalPages = data.totalPages;

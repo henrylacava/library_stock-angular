@@ -1,5 +1,5 @@
 <div>
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
     @for (column of displayedColumns; track $index) {
       <ng-container [matColumnDef]="column">
         <th mat-header-cell *matHeaderCellDef>{{ column }}</th>
