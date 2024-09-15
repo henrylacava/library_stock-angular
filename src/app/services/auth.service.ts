@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, map, throwError } from 'rxjs';
+import { catchError, map, Observable, of, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -8,7 +8,7 @@ import { catchError, map, throwError } from 'rxjs';
 export class AuthService {
   constructor(private httpClient: HttpClient) {}
 
-  validateToken() {
+  validateToken(): Observable<boolean> {
     const token = localStorage.getItem('auth-token');
 
     if (token) {
@@ -16,10 +16,7 @@ export class AuthService {
         .get('http://localhost:8080/api/auth/validate')
         .pipe(
           map(() => true),
-          catchError((error) => {
-            console.error(error);
-            return throwError(() => 'Token validation failed');
-          }),
+          catchError(() => of(false)),
         );
     }
 

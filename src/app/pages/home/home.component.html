@@ -6,24 +6,13 @@
       <app-info-card text="Recent Transactions" info="789"></app-info-card>
     </section>
     <section>
-      <app-table title="Customers" description="Manage your customer accounts">
-        <form>
-          <app-primary-input
-            type="text"
-            placeholder="Search customers..."
-          ></app-primary-input>
-        </form>
-      </app-table>
-    </section>
-    <section>
-      <app-table title="Books" description="Manage your book listings">
-        <form>
-          <app-primary-input
-            type="text"
-            placeholder="Search books..."
-          ></app-primary-input>
-        </form>
-      </app-table>
+      <app-table-paginate
+        [displayedColumns]="customerDisplayedColumns"
+        [dataSource]="customerDataSource"
+        [length]="customerTotalElements"
+        (page)="getCustomers($event.pageIndex, $event.pageSize)"
+      >
+      </app-table-paginate>
     </section>
   </main>
 </div>

@@ -11,4 +11,10 @@ import { PrimaryInputComponent } from '../primary-input/primary-input.component'
 export class TableComponent {
   @Input() title: string = '';
   @Input() description: string = '';
+  @Input() fields: string[] = [];
+  @Input() items: object[] = [];
+
+  getObjectsValues(item: any): any[] {
+    return Object.values(item);
+  }
 }

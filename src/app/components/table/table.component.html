@@ -10,20 +10,23 @@
     <div>
       <table class="w-full text-left text-sm text-gray-500">
         <thead class="bg-gray-50 text-xs uppercase text-gray-700">
-          <th scope="col" class="px-6 py-3">Name</th>
-          <th scope="col" class="px-6 py-3">Email</th>
-          <th scope="col" class="px-6 py-3">Actions</th>
+          @for (field of fields; track $index) {
+            <th scope="col" class="px-6 py-3">{{ field }}</th>
+          }
         </thead>
         <tbody>
-          <tr class="bg-white">
-            <th scope="row" class="px-6 py-4 font-medium text-gray-900">
-              Henry Lacava
-            </th>
-            <td class="px-6 py-4">henrylacavaemail.com</td>
-            <td class="px-6 py-4">Excluir</td>
-          </tr>
+          @for (item of items; track $index) {
+            <tr class="bg-white">
+              @for (value of getObjectsValues(item); track $index) {
+                <td class="px-6 py-4 font-medium text-gray-900">
+                  {{ value }}
+                </td>
+              }
+            </tr>
+          }
         </tbody>
       </table>
+      
     </div>
   </main>
 </div>

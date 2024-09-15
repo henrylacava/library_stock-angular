@@ -8,11 +8,10 @@ export const authGuard: CanActivateFn = (route, state) => {
   const authService = inject(AuthService);
 
   return authService.validateToken().pipe(
-    map((isValid) => {
+    map((isValid: boolean) => {
       if (isValid) {
         return true;
       }
-
       router.navigate(['/login']);
       return false;
     }),
