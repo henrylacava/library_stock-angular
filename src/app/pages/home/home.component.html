@@ -7,7 +7,8 @@
     </section>
     <section>
       <app-table-paginate
-        [displayedColumns]="customerDisplayedColumns"
+        [columns]="customerColumns"
+        [displayedColumns]="displayedColumns"
         [dataSource]="customerDataSource"
         [length]="customerTotalElements"
         (page)="getCustomers($event.pageIndex, $event.pageSize)"
